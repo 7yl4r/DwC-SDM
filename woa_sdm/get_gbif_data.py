@@ -1,3 +1,5 @@
+import pandas as pd
+
 from pygbif import occurrences as gbif_occurrences, species as gbif_species
 
 
