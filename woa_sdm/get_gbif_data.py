@@ -1,3 +1,6 @@
+from pygbif import occurrences as gbif_occurrences, species as gbif_species
+
+
 def get_gbif_data(scientific_names, area_bbox=None, limit_per_species=1000):
     """
     scientific_names: list of taxon scientific names
