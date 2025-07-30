@@ -1,4 +1,5 @@
 import pandas as pd
+import time
 
 from pygbif import occurrences as gbif_occurrences, species as gbif_species
 
