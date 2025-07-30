@@ -25,7 +25,7 @@ def get_obis_occurrences_by_taxaids(taxa_ids, area_bbox=None, limit=10000):
             continue
 
         if df:
-            print(f'{length(df)} occurrences found.')
+            print(f'{len(df)} occurrences found.')
         else:
             print('no occurrences found.')
 
