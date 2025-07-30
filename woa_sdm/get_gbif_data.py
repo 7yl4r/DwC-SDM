@@ -25,7 +25,7 @@ def get_gbif_data(scientific_names, area_bbox=None, limit_per_species=1000):
         results = gbif_occurrences.search(**params)
         data = results['results']
         if data:
-            print(f'{length(data)} occurrences found.')
+            print(f'{len(data)} occurrences found.')
             df = pd.DataFrame(data)
         else:
             print('no occurrences found.')
