@@ -20,12 +20,9 @@ def get_obis_occurrences_by_taxaids(taxa_ids, area_bbox=None, limit=10000):
         try:
             df = query.to_pandas()
         except Exception:
+            print("query.to_pandas fail")
             continue
 
-        if set(['decimalLongitude', 'decimalLatitude', 'eventDate']).issubset(df.columns):
-            frames.append(df[['decimalLongitude', 'decimalLatitude', 'eventDate']].rename(
-                columns={'decimalLongitude': 'lon', 'decimalLatitude': 'lat', 'eventDate': 'time'}
-            ))
     if frames:
         return pd.concat(frames, ignore_index=True)
-    return pd.DataFrame(columns=['lon', 'lat', 'time'])
+    return pd.DataFrame(columns=['decimalLongitude', 'decimalLatitude', 'eventDate'])
