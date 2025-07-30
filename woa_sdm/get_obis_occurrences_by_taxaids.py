@@ -9,6 +9,7 @@ def get_obis_occurrences_by_taxaids(taxa_ids, area_bbox=None, limit=10000):
     """
     frames = []
     for tid in taxa_ids:
+        print(f'fetching taxa aphiaID #{tid}...')
 
         query = obis_occurrences.search(taxonid=tid, size=limit)
         if area_bbox:
