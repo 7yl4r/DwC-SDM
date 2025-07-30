@@ -23,6 +23,12 @@ def get_obis_occurrences_by_taxaids(taxa_ids, area_bbox=None, limit=10000):
             print("query.to_pandas fail")
             continue
 
+        if df:
+            print(f'{length(df)} occurrences found.')
+        else:
+            print('no occurrences found.')
+
+
     if frames:
         return pd.concat(frames, ignore_index=True)
     return pd.DataFrame(columns=['decimalLongitude', 'decimalLatitude', 'eventDate'])
