@@ -12,6 +12,8 @@ def get_gbif_data(scientific_names, area_bbox=None, limit_per_species=1000):
     """
     frames = []
     for name in scientific_names:
+        print(f'fetching taxa "{name}"...')
+
         params = {
             'scientificName': name,
             'limit': limit_per_species,
