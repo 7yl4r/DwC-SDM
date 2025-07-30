@@ -24,11 +24,7 @@ def get_gbif_data(scientific_names, area_bbox=None, limit_per_species=1000):
         data = results['results']
         if data:
             df = pd.DataFrame(data)
-            if set(['decimalLongitude', 'decimalLatitude', 'eventDate']).issubset(df.columns):
-                frames.append(df[['decimalLongitude', 'decimalLatitude', 'eventDate']].rename(
-                    columns={'decimalLongitude':'lon', 'decimalLatitude':'lat', 'eventDate':'time'}
-                ))
         time.sleep(1)
     if frames:
         return pd.concat(frames, ignore_index=True)
-    return pd.DataFrame(columns=['lon', 'lat', 'time'])
+    return pd.DataFrame(columns=['decimalLongitude', 'decimalLatitude', 'eventDate'])
