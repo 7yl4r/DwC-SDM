@@ -21,6 +21,7 @@ def get_obis_occurrences_by_taxaids(taxa_ids, area_bbox=None, limit=10000):
         try:
             df = query.to_pandas()
             print(f'{len(df)} occurrences found.')
+            frames.append(df)
         except Exception:
             print("query.to_pandas fail")
             continue
