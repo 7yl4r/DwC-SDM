@@ -27,6 +27,7 @@ def get_gbif_data(scientific_names, area_bbox=None, limit_per_species=1000):
         if data:
             print(f'{len(data)} occurrences found.')
             df = pd.DataFrame(data)
+            frames.append(df)
         else:
             print('no occurrences found.')
         time.sleep(1)
