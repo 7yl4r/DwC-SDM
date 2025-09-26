@@ -37,6 +37,8 @@ def add_environmental_data(
         # Read band as a masked array (mask=True where NoData)
         arr = src.read(band, masked=True).astype("float32")
 
+        print(f"[{band}] img.shape: {arr.shape}, img.ndim: {arr.ndim}")
+
         # Interpolate holes (where mask==True)
         # fillnodata uses 'mask' to identify holes; values in those cells are ignored.
         filled = fillnodata(
